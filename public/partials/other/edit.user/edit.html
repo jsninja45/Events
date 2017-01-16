@@ -1,0 +1,87 @@
+
+<section class="create-page-wrap">
+	<header>
+		<p class="font-italic">Edit Your Profile</p>
+	</header>
+	<div class="create-user-section">
+		<form name="editUser" novalidate>
+
+			<div class="avatar-ring">
+				<div class="avatar">
+					<img ng-src="{{edit.currentUser.avatarImg}}">
+				</div>
+			</div>
+			<div ng-show="edit.uploadImg" class="upload-photo-btn">
+				<input type="file" class="custom-photo-input" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+			</div>
+			<div ng-hide="edit.uploadImg" class="unload-disable">
+				<i class="ion-aperture"></i>
+			</div>
+
+			<div class="user-name">
+				<div class="form-group" show-errors>
+					<input name="userName" class="one-per-line-input" ng-model="edit.currentUser.displayName" placeholder="Full name"required>
+					<p class="error-color" ng-show="edit.needMoreName">Please provide a First and Last Name</p>
+					<p class="error-color" ng-show="edit.needLessName">First and Last Name Only</p>
+				</div>
+			</div>
+			<div class="input-title">
+				<i class="ion-ios-star"></i> BIO
+			</div>
+			<div class="form-group" show-errors>
+				<textarea name="userBio" rows="3" class="one-per-line-input" placeholder="Add up to 300 characters about yourself." ng-model="edit.currentUser.bio" required></textarea>
+				<p class="help-block" ng-if="editUser.userBio.$error.required">Please provide a bio</p>
+			</div>
+
+			<div class="input-title">
+				<i class="ion-ios-star"></i> EMAIL
+			</div>
+			<div class="form-group" show-errors>
+				<input name="userEmail" class="one-per-line-input" type="email" placeholder="Email address" ng-model="edit.currentUser.email" required>
+				<p class="help-block" ng-if="editUser.userEmail.$error.email">We require an email to sign up</p>
+			</div>
+
+			<div class="input-title input-title-half">
+				PROFESSION
+			</div>
+			<div class="input-title input-title-half">
+				<i class="ion-ios-star"></i> DOB
+			</div>
+			<div class="form-group two-per-line-input">
+				<input name="userProfession" class="form-control one-per-line-input" placeholder="Line of Work" ng-model="edit.user.profession"></input>
+			</div>
+			<div class="form-group two-per-line-input" show-errors>
+				<input type="date" name="userDOB" class="date-input input-bigger" ng-model="edit.currentUser.dob" required></input>
+				<p class="help-block" ng-if="editUser.userDOB.$error.required">Date of Birth Required</p>
+			</div>
+
+			<div class="input-title input-title-half">
+				LOCATION
+			</div>
+			<div class="input-title input-title-half">
+				SEX
+			</div>
+			<input class="half-input right-input-margin" placeholder="Where you call home" ng-model="edit.currentUser.location">
+			<select class="half-input" ng-model="edit.currentUser.sex">
+				<option value="" disabled selected>Select your option</option>
+				<option value="Female">Female</option>
+				<option value="Male">Male</option>
+			</select>
+
+			<div class="input-title">
+				<i class="ion-ios-star"></i> WEBSITE OR LINK
+			</div>
+			<div class="form-group" show-errors>
+				<input name="userLink" class="one-per-line-input" placeholder="Add a link to your website, Twitter, or anything you like." ng-model="edit.currentUser.link" required>
+				<p class="help-block" ng-if="editUser.userLink.$error.required">Please provide use a link</p>
+			</div>
+			<p class="change-password" ng-click="edit.changePassword()">Change Password</p>
+
+			<div ng-click="edit.submitEdits(edit.currentUser)" class="shared-btn create-btn">
+				SAVE EDITS
+			</div>
+		</form>
+	</div>
+</section>
+
+<div ui-view></div>

@@ -1,0 +1,91 @@
+
+<section class="create-page-wrap">
+	<header>
+		<p class="font-italic">Complete Your Profile</p>
+	</header>
+	<div class="create-user-section">
+		<form name="createUser" novalidate>
+			<div class="avatar-ring">
+				<div class="avatar">
+					<img ng-src="{{create.user.avatarImg}}">
+				</div>
+			</div>
+			<div ng-show="create.uploadImg" class="upload-photo-btn">
+				<input type="file" class="custom-photo-input" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+			</div>
+			<div ng-hide="create.uploadImg" class="unload-disable">
+				<i class="ion-aperture"></i>
+			</div>
+
+			<div class="user-name">
+				<div class="form-group" show-errors>
+					<input name="userName" class="form-control one-per-line-input has-error-dark" ng-model="create.user.displayName" placeholder="Full name"required>
+				</div>
+				<p class="error-color" ng-show="create.needMoreName">Please provide a First and Last Name</p>
+				<p class="error-color" ng-show="create.needLessName">First and Last Name Only</p>
+			</div>
+			<div class="input-title">
+				<i class="ion-ios-star"></i> BIO
+			</div>
+			<div class="form-group" show-errors>
+				<textarea class="form-control one-per-line-input has-error-dark" name="userBio" rows="3" placeholder="Add up to 300 characters about yourself." ng-model="create.user.bio" required></textarea>
+			</div>
+
+			<div class="input-title">
+				<i class="ion-ios-star"></i> EMAIL
+			</div>
+			<div class="form-group" show-errors>
+				<input name="userEmail" class="form-control one-per-line-input has-error-dark" type="email" placeholder="Email address" ng-model="create.user.email" required></input>
+			</div>
+
+			<div class="input-title input-title-half">
+				<i class="ion-ios-star"></i> PASSWORD
+			</div>
+			<div class="input-title input-title-half">
+				<i class="ion-ios-star"></i> DOB
+			</div>
+			<div class="form-group two-per-line-input right-input-margin" show-errors>
+				<input type="password" name="userPassword" class="form-control input-bigger has-error-dark" placeholder="Password" ng-model="create.user.password" required></input>
+			</div>
+			<div class="form-group two-per-line-input" show-errors>
+				<input type="date" name="userDOB" class="form-control date-input input-bigger has-error-dark" placeholder="00.00.00" ng-model="create.user.dob" required></input>
+			</div>
+
+			<div class="input-title input-title-half">
+				LOCATION
+			</div>
+			<div class="input-title input-title-half">
+				SEX
+			</div>
+			<div class="form-group">
+				<input class="form-control two-per-line-input right-input-margin" placeholder="Where you call home" ng-model="create.user.city"></input>
+				<select class="two-per-line-input" ng-model="create.user.sex">
+					<option value="" disabled selected>Select your option</option>
+					<option value="Female">Female</option>
+					<option value="Male">Male</option>
+				</select>
+			</div>
+
+			<div class="input-title">
+				<i class="ion-ios-star"></i> WEBSITE OR LINK
+			</div>
+			<div class="form-group" show-errors>
+				<input name="userLink" class="form-control one-per-line-input has-error-dark" placeholder="Add a link to your website, Twitter, or anything you like." ng-model="create.user.weblink" required></input>
+			</div>
+
+			<div class="input-title">
+				PROFESSION
+			</div>
+			<div class="form-group">
+				<input name="userProfession" class="form-control one-per-line-input" placeholder="Line of Work" ng-model="create.user.profession"></input>
+			</div>
+			<div class="terms-check-box">
+				<i class="ion-ios-circle-outline" on-icon="ion-ios-circle-outline" off-icon="ion-ios-circle-filled" toggle-class></i> I accept Scriptd's Terms of Serivce and Privacy Policy.
+			</div>
+			<p class="help-block help-block-dark" ng-if="createUser.userLink.$error.required || createUser.userDOB.$error.required || createUser.userPassword.$error.required || createUser.userEmail.$error.email || createUser.userBio.$error.required || createUser.userName.$error.required">* Oops, please fill out the above missing info.</p>
+			<div ng-click="create.register(create.user)" class="shared-btn create-btn">
+				COMPLETE
+			</div>
+		</form>
+	</div>
+</section>

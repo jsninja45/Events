@@ -1,0 +1,274 @@
+/*-------------------------------------------------------------- 
+***************************************************************
+
+					CREATE/EDIT PROFILE
+
+***************************************************************
+-------------------------------------------------------------- */
+
+.create-page-wrap {
+	background: #000;
+	width: 100%;
+	overflow: hidden;
+	color: #fff;
+	text-align: center;	
+}
+
+.create-page-wrap .custom-photo-input:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.create-page-wrap .unload-disable {
+	position: relative;
+	top: 0;
+}
+
+.create-page-wrap header {
+	font-size: 3rem;
+	line-height: 80px;
+	color: #000;	
+}
+
+.create-user-section {
+	width: 500px;
+	margin: 0 auto;
+}
+
+.avatar-ring {
+	width: 106px;
+	height: 106px;
+	margin: 30px auto;
+	border-radius: 50%;
+	border: 1px solid #ddd;
+}
+.avatar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 2px auto;
+	position: relative;
+}
+
+.avatar img {
+	height: 100%;
+	z-index: 1;
+}
+
+.input-title {
+	color: #8C8C8C;
+	margin: 10px 0 15px 0;
+}
+
+.input-title i {
+	color: #FDFC3A;
+	font-size: .9rem;
+	position: relative;
+	bottom: 2px;
+	right: 2px;
+}
+
+.input-title-half {
+	width: 48%;
+	display: inline-block;
+}
+
+.two-per-line-input {
+	display: inline-block;
+	width: 48%;
+}
+
+.one-per-line-input {
+	display: block;
+	width: 99%;
+}
+
+/*-------------------------------------------------------------- 
+***************************************************************
+
+					FORMS
+
+***************************************************************
+-------------------------------------------------------------- */
+
+.create-page-wrap textarea, .create-page-wrap input, .create-page-wrap select {
+	background-color: #000;
+	line-height: 40px;
+	text-align: center;
+	font-size: 1.8rem;
+	font-style:italic;
+	color: #fff;
+}
+
+.create-page-wrap input {
+	border: 1px solid #8C8C8C;
+	height: 44px;
+}
+
+.create-page-wrap input:focus {
+    outline: none !important;
+    border:1px solid #FDFC3A;
+    box-shadow: 0 0 5px #FDFC3A;
+}
+
+.create-page-wrap textarea:focus {
+    outline: none !important;
+    border:1px solid #FDFC3A;
+    box-shadow: 0 0 5px #FDFC3A;
+}
+
+.create-page-wrap select {
+	height: 44px;
+}
+
+.user-name input {
+	height: 55px;
+	font-size: 3.5rem;
+	font-style: normal;
+	border: 1px solid #000;
+}
+
+.date-input {
+	height: 44px;
+}
+
+.half-input {
+	width: 49%;
+}
+.input-bigger {
+	width: 100%;
+}
+
+.right-input-margin {
+	margin-right: 7px;
+}
+
+.terms-check-box {
+	color: #8C8C8C;
+	margin: 20px 0;
+}
+.terms-check-box i {
+	margin-right: 3px;
+	font-size: 2rem;
+	position: relative;
+	top: 3px;
+}
+
+.create-btn {
+	border: 1px solid #fff;
+	color: #000;
+	margin: 30px 0 50px 0;
+	background-color: #000;
+	color: #fff;
+}
+
+.create-btn:hover {
+	color: #000;
+}
+
+.change-password {
+	margin: 30px 0 0 0;
+	cursor: pointer;
+}
+
+
+
+::-webkit-input-placeholder {
+   color: #8C8C8C;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #8C8C8C;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #8C8C8C;  
+}
+
+:-ms-input-placeholder {  
+   color: #8C8C8C;  
+}
+
+/* DARK PAGE VALIDATION
+-------------------------------------------------------------- */
+.help-block-dark {
+	color: #FDFC3A !important;
+	font-style: italic;
+}
+
+.has-error .has-error-dark {
+	border-color: #FDFC3A;
+}
+
+/* UPLOAD BTN
+-------------------------------------------------------------- */
+.input-image {
+	width: 150px;
+	height: 30px;
+	text-align: center;
+	display: inline-block;
+	background: #000;
+	border: 1px solid #fff;
+	border-radius: 15px;
+	outline: none;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.input-image:hover{
+	background-color: #FDFC3A;
+	color: #000;
+}
+
+
+.upload-photo-btn {
+	margin: 0 auto;
+	width: 200px;
+}
+
+.custom-photo-input {
+	border: 1px solid #000 !important;
+}
+
+.custom-photo-input::-webkit-file-upload-button {
+	visibility: hidden;
+}
+.custom-photo-input::before {
+	content: 'UPLOAD IMAGE';
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	display: inline-block;
+	background: #000;
+	border: 1px solid #fff;
+	border-radius: 15px;
+	outline: none;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	cursor: pointer;
+	font-weight: 700;
+	position: relative;
+	bottom: 4px;
+}
+.custom-photo-input:hover::before {
+	background-color: #FDFC3A;
+	color: #000;
+}
+
+.custom-photo-input:active::before {
+	visibility: hidden;
+}
+
+.custom-photo-input:focus {
+    outline: none !important;
+    border: none;
+    box-shadow: none;
+}
+
+
+
